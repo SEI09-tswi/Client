@@ -13,5 +13,72 @@
     </head>
     <body>
       <h1>SICKKK WIDDITTT Template</h1>
+<div id='message'><h2></h2></div>
+
+      <form id="sign-up">
+    <fieldset>
+    <legend> sign up </legend>
+    <input type="text" name="credentials[email]" placeholder="email">
+    <input type="password" name="credentials[password]" placeholder="password">
+    <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+    <button type = "submit" value="sign up" >sign up</button>
+    </fieldset>
+    </form>
+                 <!--        sec form -->
+    <form id="sign-in" >
+    <fieldset>
+    <legend> sign in </legend>
+    <input type="text" name="credentials[email]" placeholder="email">
+    <input type="password" name="credentials[password]" placeholder="password">
+    <button type = "submit" value="sign up" >sign in</button>
+    </fieldset>
+    </form>
+
+  <form id="change-password" >
+  <fieldset>
+  <legend> change password </legend>
+  <input type="password" name="passwords[old]" placeholder="old password">
+  <input type="password" name="passwords[new]" placeholder="new password">
+  <input type = "submit" value="change">
+  </fieldset>
+  </form>
+
+<!-- ********************************testing ******************************  -->
+
+  <!-- <head>
+    <title>Socket.IO chat</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: 0.5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+    </style>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <form action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+  <script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io(http://localhost:4741/chats);
+</script>
+</body>
+ -->
+
+<!-- ********************************testing ******************************  -->
+<div id="display" >6 </div>
+<div id="sendmsg" > 8</div>
+<button id="sendbutton"> Send</button>
+
+
+
+
+
+
     </body>
 </html>
