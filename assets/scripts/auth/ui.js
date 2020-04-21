@@ -3,15 +3,18 @@ const store = require('../store')
 
 const signUpSuccess = function(){
 $('#message').text('signed in succesfully')
-  store.user=data.user
+
 }
 
 const signUpFailure = function(){
 $('#message').text('signed in fail')
 }
 
-const signInSuccess = function(){
+const signInSuccess = function(data){
 $('#message').text('signed in signInSucces')
+
+store.user=data.user
+console.log("user  "+data.user)
 }
 
 const signInFailure = function(){

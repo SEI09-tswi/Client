@@ -24,7 +24,7 @@ const changePassword= function (data) {
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
     headers:{
-      Authorization:'Bearer ='+store.user.token
+      Authorization:'Token token='+store.user.token
     },
     data
     // data: data
@@ -36,7 +36,7 @@ const signOut = function () {
     url: config.apiUrl + '/sign-out',
     method: 'DELETE',
     headers:{
-      Authorization:'Bearer ='+store.user.token
+      Authorization:'Token token='+store.user.token
     },
     // data: data
   })
