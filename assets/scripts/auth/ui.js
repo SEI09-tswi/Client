@@ -1,5 +1,13 @@
 const store = require('../store')
 
+const hide=function(){
+
+    $('#sign-up').hide()
+  $('#sign-in').hide()
+  $('#change-password').hide()
+}
+
+
 const signUpSuccess = function () {
   $('#message').text('signed in succesfully')
 }
@@ -13,6 +21,7 @@ const signInSuccess = function (data) {
 
   store.user = data.user
   console.log('user  ' + data)
+  hide()
 }
 
 const signInFailure = function () {

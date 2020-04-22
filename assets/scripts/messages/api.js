@@ -1,7 +1,11 @@
 const config = require('../config')
 const store = require('../store')
 
+
+
+
 const onSendMessage = function (data) {
+  console.log('inside api'+data)
   return $.ajax({
     url: config.apiUrl + '/chats',
     method: 'POST',
@@ -24,8 +28,32 @@ const onGetMessage = function () {
   })
 }
 
+const updateMessage= function (data,id) {
+  return $.ajax({
+    url: config.apiUrl + '/chats/'+id,
+    method: 'PATCH',
+    headers:{
+      Authorization:'Token token='+store.user.token
+    },
+    data
+  })
+}
+
+const removeMessage= function (id) {
+  return $.ajax({
+      url: config.apiUrl + '/chats/' + id,
+      method: 'DELETE',
+      headers: {
+        Authorization: 'Token token=' + store.user.token
+      },
+    })
+}
+
 module.exports = {
   onSendMessage,
-  onGetMessage
+  onGetMessage,
+  updateMessage,
+  removeMessage
+
 
 }

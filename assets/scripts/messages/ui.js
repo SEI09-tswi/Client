@@ -1,4 +1,5 @@
 const store = require('../store')
+const showMessageTemplate = require('../templates/message.handlebars')
 
 const sendSuccessfully = function () {
   $('#message').text('Message sent succesfully')
@@ -9,9 +10,16 @@ const sendFailure = function (data) {
 }
 
 const getMsgSuccessfully = function (data) {
-  for (let i = 0; i < data.chats.length; i++) {
-    $('#messages').append('<li>' + data.chats[i].message + '</li>')
-  }
+console.log('this '+data.chats[0].message.user)
+console.log('this '+data.chats[data.chats.length-1].user)
+  // for (let i = 0; i < data.chats.length; i++) {
+  //   $('#messages').append('<li>' + data.chats[i].message + '</li>')
+  // }
+  // const showmessageHtml = showMessageTemplate({
+  //     messages: data.chats
+  //   })
+  //   $('#messages').html(showmessageHtml)
+
 }
 
 const getMsgFailure = function (data) {
