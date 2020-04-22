@@ -10,7 +10,7 @@ const sendFailure = function (data) {
 
 const getMsgSuccessfully = function (data) {
   for (let i = 0; i < data.chats.length; i++) {
-    $('#messages').append('<li>' + data.chats[i].messag + '</li>')
+    $('#messages').append('<li>' + data.chats[i].message + '</li>')
   }
 }
 
