@@ -1,42 +1,40 @@
 const store = require('../store')
 
-
-const signUpSuccess = function(){
-$('#message').text('signed in succesfully')
-
+const signUpSuccess = function () {
+  $('#message').text('signed in succesfully')
 }
 
-const signUpFailure = function(){
-$('#message').text('signed in fail')
+const signUpFailure = function () {
+  $('#message').text('signed in fail')
 }
 
-const signInSuccess = function(data){
-$('#message').text('signed in signInSucces')
+const signInSuccess = function (data) {
+  $('#message').text('signed in signInSucces')
 
-store.user=data.user
-console.log("user  "+data.user)
+  store.user = data.user
+  console.log('user  ' + data)
 }
 
-const signInFailure = function(){
-$('#message').text('signed signInFailure')
+const signInFailure = function () {
+  $('#message').text('signed signInFailure')
 }
 
-const changePasswordSuccess = function(){
-$('#message').text('change Password Success')
+const changePasswordSuccess = function () {
+  $('#message').text('change Password Success')
 }
 
-const changePasswordFailure = function(){
-$('#message').text('change Password Failure')
+const changePasswordFailure = function () {
+  $('#message').text('change Password Failure')
 }
 
 module.exports = {
-signUpFailure,
-signUpSuccess,
-signInSuccess,
-signInFailure,
-changePasswordSuccess,
-changePasswordFailure,
-//
-// signOutSuccess,
-// signOutFailure,
+  signUpFailure,
+  signUpSuccess,
+  signInSuccess,
+  signInFailure,
+  changePasswordSuccess,
+  changePasswordFailure
+  //
+  // signOutSuccess,
+  // signOutFailure,
 }
