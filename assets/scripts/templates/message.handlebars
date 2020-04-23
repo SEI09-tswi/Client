@@ -1,0 +1,23 @@
+<!--  -->
+{{#if messages}}
+
+  {{#each messages as |message|}}
+    <section class="show " data-id="{{message.id}}" data-message="{{message}}">
+
+      <h5>{{message.user}}: {{message.message}}  </h5>
+
+ <button id="btn-ondelete" class="btn-ondelete but2" data-id="{{message._id}}"> Delete </button>
+ <button id="btn-onupdate" class="btn-onupdate but2" data-id="{{message._id}}"> update </button>
+    </section>
+
+
+    <!--  -->
+
+
+  {{/each}}
+
+
+{{else}}
+
+   <div class="hadlebardiv">click new message to create message </div>
+{{/if}}
