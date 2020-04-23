@@ -10,11 +10,6 @@ const sendFailure = function (data) {
 }
 
 const getMsgSuccessfully = function (data) {
-  console.log('data ')
-  console.log(data)
-  console.log('user')
-  console.log(data.message)
-
   const showmessageHtml = showMessageTemplate({
       messages: data
     })
@@ -26,9 +21,19 @@ const getMsgFailure = function (data) {
   $('#message').text('Error while getting message')
 }
 
+const displayMessages = function (message) {
+  console.log('in display msg')
+  store.data.messages.push(message)
+  const object = {message}
+  console.log(object)
+  object.current_user_id = store.user._id
+  $('#messages').append('<li>' + object + '</li>')
+}
+
 module.exports = {
   sendSuccessfully,
   sendFailure,
   getMsgSuccessfully,
-  getMsgFailure
+  getMsgFailure,
+  displayMessages
 }

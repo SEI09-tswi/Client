@@ -2,6 +2,10 @@
 const getFormFields = require('./../../../lib/get-form-fields')
 const ui = require('./ui')
 const api = require ('./api')
+const io = require('socket.io-client')
+const messagesui = require('../messages/ui')
+const messagesevents = require('../messages/event')
+let socket
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -16,6 +20,10 @@ const onSignIn = function (event) {
   const data = getFormFields(event.target)
   api.signIn(data)
   .then(ui.signInSuccess)
+  .then (function () {
+    socket = io.connect('localhost:4741/chats')
+    socket.on('chat message', messagesui.displayMessages)
+  })
   .catch(ui.signInFailure)
 }
 
