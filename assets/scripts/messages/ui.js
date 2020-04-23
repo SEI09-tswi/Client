@@ -10,16 +10,16 @@ const sendFailure = function (data) {
 }
 
 const getMsgSuccessfully = function (data) {
-console.log('this '+data.chats[0].message.user)
-console.log('this '+data.chats[data.chats.length-1].user)
-  // for (let i = 0; i < data.chats.length; i++) {
-  //   $('#messages').append('<li>' + data.chats[i].message + '</li>')
-  // }
-  // const showmessageHtml = showMessageTemplate({
-  //     messages: data.chats
-  //   })
-  //   $('#messages').html(showmessageHtml)
+  console.log('data ')
+  console.log(data)
+  console.log('user')
+  console.log(data.message)
 
+  const showmessageHtml = showMessageTemplate({
+      messages: data
+    })
+    $('#messages').html(showmessageHtml)
+  $('#messages').scrollTop(50000)
 }
 
 const getMsgFailure = function (data) {

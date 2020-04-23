@@ -5,7 +5,6 @@ const store = require('../store')
 
 
 const onSendMessage = function (data) {
-  console.log('inside api'+data)
   return $.ajax({
     url: config.apiUrl + '/chats',
     method: 'POST',

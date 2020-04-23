@@ -8,33 +8,43 @@
 const authEvents = require('./auth/event')
 const msgEvents = require('./messages/event')
 const io = require('socket.io-client')
-
-$(() => {
-   // connect to socket
-  const socket = io.connect('http://localhost:4741')
-  $('#send-message').submit(function(e) {
-    console.log("inside 33")
-      e.preventDefault(); // prevents page reloading
-      const userInput = $('#send-message2').val()
-      socket.emit('chat message', userInput);
-  });
-
-  socket.on('chat message', function(msg){
-      $('#messages').append($('<li>').text(msg));
-    });
-})
+const msgdisplay = require('./messages/ui')
 
 
 
 $(() => {
+
+
+
+
+
+
+
   // your JS code goes here
+
  $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
 //   $('#change-password').on('submit', authEvents.onChangePassword)
 //   $('#sign-out').on('click', authEvents.onSignOut)
-// $('#send-message').on('submit', msgEvents.onSend)
-//   $('#messages').on('click','#btn-ondelete', msgEvents.ondelete)
-// $('#messages').on('click','#btn-onupdate', msgEvents.onupdate)
+$('#send-message').on('submit', msgEvents.onSend)
+  $('#messages').on('click','.btn-ondelete', msgEvents.ondelete)
+$('#messages').on('click','.btn-onupdate', msgEvents.onupdate)
+
+//=============********************
+//connect to socket
+const socket = io.connect('http://localhost:4741')
+$('#send-message').submit(function(e) {
+//  console.log("inside 33")
+    e.preventDefault(); // prevents page reloading
+    const userInput = $('#send-message2').val()
+    socket.emit('chat message', userInput);
+});
+
+socket.on('chat message', function(msg){
+
+  msgdisplay.getMsgSuccessfully(msg)
+   //$('#messages').append($('<li>').text(msg));
+  });
 
 
 })

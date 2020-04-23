@@ -20,7 +20,6 @@ const signInSuccess = function (data) {
   $('#message').text('signed in signInSucces')
 
   store.user = data.user
-  console.log('user  ' + data)
   hide()
 }
 
