@@ -1,16 +1,10 @@
 const store = require('../store')
-
-const hide=function(){
-
-    $('#sign-up').hide()
-  $('#sign-in').hide()
-  $('#change-password').hide()
-}
-
+const chatRoomTemplate = require('../templates/message.handlebars')
+const sendTemplate = require('../templates/send.handlebars')
 
 const signUpSuccess = function () {
   $('#message').text('signed UP succesfully')
-    console.log('sign-up signUPSuccess')
+  console.log('sign-up signUPSuccess')
 }
 
 const signUpFailure = function () {
@@ -21,6 +15,9 @@ const signUpFailure = function () {
 const signInSuccess = function (data) {
   $('#message').text('signed in is Success')
   store.user = data.user
+  $('.main').html('')
+  $('.main').html(chatRoomTemplate)
+  $('.main').html(sendTemplate)
 }
 
 const signInFailure = function () {
@@ -42,7 +39,6 @@ module.exports = {
   signInFailure,
   changePasswordSuccess,
   changePasswordFailure
-  //
   // signOutSuccess,
   // signOutFailure,
 }

@@ -3,19 +3,22 @@
 @import url('https://fonts.googleapis.com/css?family=Mukta');
 
 body{
-  font-family: 'Mukta', sans-serif;
-	height:100vh;
-	min-height:550px;
   background-color: rgba(130, 20, 236, 0.9);
-	background-image: url('https://assets.website-files.com/5d94c0ba509c8ee613a7dfe5/5dcc058176180bb1126afede_1_WvD-qL20ChMSYUEb9FUVFg.png');
-	background-repeat: no-repeat;
-	background-size:cover;
-	background-position:center;
-	position:relative;
+}
+
+.main {
+  font-family: 'Mukta', sans-serif;
+  height:100vh;
+  min-height:550px;
+  background-repeat: no-repeat;
+  background-image: url('https://assets.website-files.com/5d94c0ba509c8ee613a7dfe5/5dcc058176180bb1126afede_1_WvD-qL20ChMSYUEb9FUVFg.png');
+  background-size:cover;
+  background-position:center;
+  position:relative;
     overflow-y: hidden;
     font-family: 'Comic Neue', cursive;
-
 }
+
 a{
   text-decoration:none;
   color:#444444;

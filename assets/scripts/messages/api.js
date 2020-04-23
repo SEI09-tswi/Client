@@ -38,14 +38,14 @@ const updateMessage= function (data,id) {
   })
 }
 
-const removeMessage= function (id) {
+const removeMessage = function (id) {
   return $.ajax({
-      url: config.apiUrl + '/chats/' + id,
-      method: 'DELETE',
-      headers: {
-        Authorization: 'Token token=' + store.user.token
-      },
-    })
+    url: config.apiUrl + '/chats/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
 }
 
 module.exports = {

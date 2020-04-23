@@ -11,9 +11,9 @@ const sendFailure = function (data) {
 
 const getMsgSuccessfully = function (data) {
   const showmessageHtml = showMessageTemplate({
-      messages: data
-    })
-    $('#messages').html(showmessageHtml)
+    messages: data
+  })
+  $('#messages').html(showmessageHtml)
   $('#messages').scrollTop(50000)
 }
 
@@ -22,12 +22,8 @@ const getMsgFailure = function (data) {
 }
 
 const displayMessages = function (message) {
-  console.log('in display msg')
-  store.data.messages.push(message)
   const object = {message}
-  console.log(object)
   object.current_user_id = store.user._id
-  $('#messages').append('<li>' + object + '</li>')
 }
 
 module.exports = {
