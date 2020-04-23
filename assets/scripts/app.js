@@ -11,8 +11,8 @@ $(() => {
   // $('#sign-in').on('click', authEvents.onSignIn)
   $('.main').on('submit', '#sign-up', authEvents.onSignUp)
   $('.main').on('submit', '#sign-in', authEvents.onSignIn)
-  $('#change-password').on('submit', authEvents.onChangePassword)
-  $('#sign-out').on('click', authEvents.onSignOut)
+  $('#auth').on('submit', '#change-password', authEvents.onChangePassword)
+  $('#auth').on('submit', '#sign-out', authEvents.onSignOut)
   $('.main').on('click', '.selectable', authScripts.displayForm)
 
   // Message listeners

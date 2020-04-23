@@ -1,6 +1,7 @@
 const store = require('../store')
 const chatRoomTemplate = require('../templates/message.handlebars')
 const sendTemplate = require('../templates/send.handlebars')
+const authTemplate = require('../templates/change-password-signout.handlebars')
 
 const signUpSuccess = function () {
   $('#message').text('signed UP succesfully')
@@ -18,6 +19,7 @@ const signInSuccess = function (data) {
   $('.main').html('')
   $('.main').html(chatRoomTemplate)
   $('.main').html(sendTemplate)
+  $('#auth').html(authTemplate)
 }
 
 const signInFailure = function () {

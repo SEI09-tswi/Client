@@ -54,8 +54,8 @@ const onUpdate = function (event) {
       socket.emit('chat message', 'send')
       socket.on('chat message', function (msg) {
         ui.getMsgSuccessfully(msg)
+      })
     })
-  })
 }
 
 module.exports = {

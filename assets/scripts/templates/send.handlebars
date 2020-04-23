@@ -1,6 +1,28 @@
-<div id="messages" class="display "></div>
 
-<form id="send-message">
-  <input autocomplete="off" id="send-message2" type="text" name="chat[message]" required>
-  <input type = "submit" value="Send">
-</form>
+<div class="container">
+         <div class="row">
+             <div class="col-md-6 offset-md-3 col-sm-12">
+                 <h1 class="text-center">
+                 </h1>
+                     <br>
+                         <div id="messages" class="display">
+                         </div>
+                     <br>
+                     <form id="send-message">
+                       <input autocomplete="off" id="send-message2" type="text" name="chat[message]" required>
+                       <input type = "submit" value="Send">
+                     </form>
+                     <form id="change-password">
+                     <fieldset>
+                     <legend> change password </legend>
+                     <input type="password" name="passwords[old]" placeholder="old password">
+                     <input type="password" name="passwords[new]" placeholder="new password">
+                     <input type = "submit" value="change">
+                     </fieldset>
+                     </form>
+                     <form id="sign-out">
+                         <input type="submit" value="Sign Out" class="btn btn-primary">
+                     </form>
+             </div>
+         </div>
+     </div>
