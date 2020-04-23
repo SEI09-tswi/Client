@@ -8,14 +8,17 @@ const messagesevents = require('../messages/event')
 let socket
 
 const onSignUp = function (event) {
+    console.log('inevents for signup')
   event.preventDefault()
   const data = getFormFields(event.target)
+
   api.signUp(data)
   .then(ui.signUpSuccess)
   .catch(ui.signUpFailure)
 }
 
 const onSignIn = function (event) {
+  console.log('inevents for signin')
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signIn(data)
