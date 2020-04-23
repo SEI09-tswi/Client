@@ -45,27 +45,22 @@ const onSend = function (event) {
 }
 
 // Update chat
-const onupdate = function (event) {
+const onUpdate = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
-  // const data = {
-  //   'chat': {
-  //     'message': '22'
-  //   }
-  // }
-  console.log(data)
-  const id = $(event.target).data('_id')
-  console.log(id)
+  const id = $(event.target).closest('section').data('_id')
   api.updateMessage(data, id)
     .then(function () {
-      displayMassage()
+      socket.emit('chat message', 'send')
+      socket.on('chat message', function (msg) {
+        ui.getMsgSuccessfully(msg)
     })
+  })
 }
 
 module.exports = {
   onSend,
   ondelete,
-  onupdate,
+  onUpdate,
   displayMassage
 }

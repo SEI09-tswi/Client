@@ -18,7 +18,7 @@ $(() => {
   // Message listeners
   $('.main').on('submit', '#send-message', msgEvents.onSend)
   $('.main').on('click', '.btn-ondelete', msgEvents.ondelete)
-  $('.main').on('click', '.btn-onupdate', msgEvents.onupdate)
+  $('.main').on('submit', '#update', msgEvents.onUpdate)
 
   // connect to socket
   const socket = io.connect('http://localhost:4741')
