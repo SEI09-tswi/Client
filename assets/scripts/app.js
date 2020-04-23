@@ -2,13 +2,13 @@
 const authEvents = require('./auth/event')
 //const msgEvents = require('./messages/event')
 const io = require('socket.io-client')
-const authscripts = require('./js/authscripts')
+const authScripts = require('./js/authscripts')
 $(() => {
   // Auth listeners
-  console.log('in app')
-  $('#sign-up').on('submit', authEvents.onSignUp)
-  $('#sign-in').on('submit', authEvents.onSignIn)
-  $('.selectable').on('click', authscripts.displayForm)
+
+  $('.main').on('submit', '#sign-up', authEvents.onSignUp)
+  $('.main').on('submit', '#sign-in', authEvents.onSignIn)
+  $('.main').on('click', '.selectable', authScripts.displayForm)
   // $('#change-password').on('submit', authEvents.onChangePassword)
   // $('#sign-out').on('click', authEvents.onSignOut)
 
