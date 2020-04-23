@@ -9,22 +9,22 @@ const hide=function(){
 
 
 const signUpSuccess = function () {
-  $('#message').text('signed in succesfully')
+  $('#message').text('signed UP succesfully')
+    console.log('sign-up signUPSuccess')
 }
 
 const signUpFailure = function () {
-  $('#message').text('signed in fail')
+  $('#message').text('signup is fail')
+  console.log('sign-up Failures')
 }
 
 const signInSuccess = function (data) {
-  $('#message').text('signed in signInSucces')
-
+  $('#message').text('signed in is Success')
   store.user = data.user
-  hide()
 }
 
 const signInFailure = function () {
-  $('#message').text('signed signInFailure')
+  $('#message').text('sign in Failure')
 }
 
 const changePasswordSuccess = function () {
