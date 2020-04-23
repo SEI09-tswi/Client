@@ -7,9 +7,16 @@
   border-radius: 12px;
   margin: 20px;
   border-style: groove;
+  overflow: hidden;
+  // overflow-y: scroll
+  overflow-y: auto;
 }
 .show{
   border-radius: 12px;
   margin: 20px;
   border-style: groove;
 }
+
+// .but2{
+//   float: right;
+// }

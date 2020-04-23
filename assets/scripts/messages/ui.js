@@ -10,10 +10,11 @@ const sendFailure = function (data) {
 }
 
 const getMsgSuccessfully = function (data) {
-  console.log('this '+data.chats[0].message.user)
-console.log('this '+data.chats[data.chats.length-1].user)
-    // const showmessageHtml = showMessageTemplate({
-  //     messages: data.chats
+  const showmessageHtml = showMessageTemplate({
+      messages: data
+    })
+    $('#messages').html(showmessageHtml)
+  $('#messages').scrollTop(50000)
 }
 
 const getMsgFailure = function (data) {
