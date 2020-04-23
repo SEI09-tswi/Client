@@ -3,7 +3,7 @@
   {{#each messages as |message|}}
     <section class="show " data-_id="{{message._id}}" data-message="{{message}}">
 
-      <h5>{{message._id}}: {{message.message}}  </h5>
+      <h5>{{message.user}}: {{message.message}}  </h5>
 
  <button id="btn-ondelete" class="btn-ondelete but2" data-_id="{{message._id}}"> Delete </button>
  <button id="btn-onupdate" class="btn-onupdate but2" data-_id="{{message._id}}"> update </button>
