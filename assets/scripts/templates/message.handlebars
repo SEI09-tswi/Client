@@ -1,13 +1,13 @@
 <!--  -->
 {{#if messages}}
-
+{{log messages}}
   {{#each messages as |message|}}
-    <section class="show " data-id="{{message.id}}" data-message="{{message}}">
-
+    <section class="show ">
       <h5>{{message.user}}: {{message.message}}  </h5>
-
- <button id="btn-ondelete" class="btn-ondelete but2" data-id="{{message._id}}"> Delete </button>
- <button id="btn-onupdate" class="btn-onupdate but2" data-id="{{message._id}}"> update </button>
+{{#if message.user}}
+ <button  class="btn-ondelete but1" data-_id="{{message._id}}"> X </button>
+ <button  class="btn-onupdate but2" data-_id="{{message._id}}"> O</button>
+ {{/if}}
     </section>
 
 

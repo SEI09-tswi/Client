@@ -3,55 +3,69 @@ const ui = require('./ui')
 const api = require('./api')
 const store = require('../store')
 
-const displayMassage= function(){
+
+const io = require('socket.io-client')
+const socket = io.connect('http://localhost:4741')
+
+const displayMassage = function() {
   api.onGetMessage()
     .then(ui.getMsgSuccessfully)
     .catch(ui.getMsgFailure)
 }
 
-const onSend = function (event) {
+
+const onSend = function(event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  data.chat.user=  store.user.email
+  data.chat.user = store.user.email
   api.onSendMessage(data)
-    .then(ui.sendSuccessfully)
+    .then(() => {
+      socket.emit('chat message', 'send');
+      socket.on('chat message', function(msg) {
+        ui.getMsgSuccessfully(msg)
+      });
+    })
     .catch(ui.sendFailure)
 
-displayMassage()
 }
 
-const ondelete = function(event) {
 
-  const id = $(event.target).data('id')
-  console.log('id '+id )
+
+const ondelete = function(event) {
+  const id = $(event.target).data('_id')
+  console.log('id v8888 ' + id)
   api.removeMessage(id)
     .then(function() {
-    console.log('delete suces')
-    displayMassage()
+      socket.emit('chat message', 'send');
+      socket.on('chat message', function(msg) {
+        ui.getMsgSuccessfully(msg)
+      });
     })
     .catch(function() {
-    console.log('fail')
+      console.log('fail')
     })
-
 }
 
 
 const onupdate = function(event) {
-const data={
-"chat":{"message":"change"}
-}
+  const data = {
+    "chat": {
+      "message": "change"
+    }
+  }
   const id = $(event.target).data('id')
-  console.log('id '+id )
-  api.updateMessage(data,id)
+  console.log('id ' + id)
+  api.updateMessage(data, id)
     .then(function() {
       console.log('updateMessage suces')
       displayMassage()
     })
-  }
+}
 
 
 module.exports = {
   onSend,
   ondelete,
-  onupdate
+  onupdate,
+  displayMassage
 }
