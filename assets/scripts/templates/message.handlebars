@@ -5,8 +5,12 @@
 
       <h5>{{message.user}}: {{message.message}}  </h5>
 
- <button id="btn-ondelete" class="btn-ondelete but2" data-_id="{{message._id}}"> Delete </button>
- <button id="btn-onupdate" class="btn-onupdate but2" data-_id="{{message._id}}"> update </button>
+       <button id="btn-ondelete" class="btn-ondelete but2" data-_id="{{message._id}}"> Delete </button>
+       <form id="update">
+         <button id="btn-onupdate" class="btn-onupdate but2" data-_id="{{message._id}}"> update </button>
+         <input id="update-id" type="text"  name="chat[message]" required placeholder="Update Word">
+      </form>
+
     </section>
 
 
