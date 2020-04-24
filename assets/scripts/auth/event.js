@@ -24,7 +24,7 @@ const onSignIn = function (event) {
   api.signIn(data)
   .then(ui.signInSuccess)
   .then (function () {
-    socket = io.connect('https://sei-chatroom.herokuapp.com/')
+    socket = io.connect('https://sei-chatroom.herokuapp.com')
     socket.on('chat message', messagesui.displayMessages)
   })
   .catch(ui.signInFailure)
