@@ -3,7 +3,7 @@ const ui = require('./ui')
 const api = require('./api')
 const store = require('../store')
 const io = require('socket.io-client')
-const socket = io.connect('http://localhost:4741')
+const socket = io.connect('https://sei-chatroom.herokuapp.com/')
 
 const displayMassage = function () {
   api.onGetMessage()
