@@ -1,6 +1,33 @@
-<div id="messages" class="display "></div>
+<div class="main">
+<div class="container">
+         <div class="row">
+             <div class="col-md-6 offset-md-3 col-sm-12">
+                 <h1 class="text-center">
+                 </h1>
+                     <br>
+                         <div id="messages" class="display">
+                         </div>
+                     <br>
+                     <form id="send-message">
+                       <input autocomplete="off" id="socket-message" type="text" name="chat[message]" required>
+                       <input type= "submit" class="btn-primary" value="Send">
+                     </form>
+                     <div id='messageforsend'><h2></h2></div>
 
-<form id="send-message">
-  <input autocomplete="off" id="send-message2" type="text" name="chat[message]" required>
-  <input type = "submit" value="Send">
-</form>
+                     <form id="change-password">
+                     <fieldset>
+                     <legend> change password </legend>
+                     <input type="password" name="passwords[old]" placeholder="old password">
+                     <input type="password" name="passwords[new]" placeholder="new password">
+                     <input type="submit" class="btn-primary"  value="change">
+                     <div id='changepassmessage'><h2></h2></div>
+
+                     </fieldset>
+                     </form>
+                     <form id="sign-out">
+                         <input type="submit" value="Sign Out" class="btn btn-primary">
+                     </form>
+             </div>
+         </div>
+     </div>
+</div>

@@ -8,7 +8,6 @@ const messagesevents = require('../messages/event')
 let socket
 
 const onSignUp = function (event) {
-    console.log('inevents for signup')
   event.preventDefault()
   const data = getFormFields(event.target)
 
@@ -18,13 +17,12 @@ const onSignUp = function (event) {
 }
 
 const onSignIn = function (event) {
-  console.log('inevents for signin')
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signIn(data)
   .then(ui.signInSuccess)
   .then (function () {
-    socket = io.connect('localhost:4741/chats')
+    socket = io.connect('https://sei-chatroom.herokuapp.com')
     socket.on('chat message', messagesui.displayMessages)
   })
   .catch(ui.signInFailure)
@@ -44,8 +42,8 @@ const onSignOut = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signOut(data)
-  .then(ui.signOutSuccess)
- .catch(ui.signOutFailure)
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
 }
 
 module.exports = {

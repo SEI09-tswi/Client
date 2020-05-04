@@ -27,12 +27,14 @@ const onGetMessage = function () {
   })
 }
 
-const updateMessage= function (data,id) {
+const updateMessage = function (data, id) {
+  console.log(data)
+  console.log(data.message)
   return $.ajax({
-    url: config.apiUrl + '/chats/'+id,
+    url: config.apiUrl + '/chats/' + id,
     method: 'PATCH',
     headers:{
-      Authorization:'Token token='+store.user.token
+      Authorization:'Token token='+ store.user.token
     },
     data
   })

@@ -1,15 +1,19 @@
 const store = require('../store')
 const chatRoomTemplate = require('../templates/message.handlebars')
 const sendTemplate = require('../templates/send.handlebars')
+const authTemplate = require('../templates/auth.handlebars')
 
 const signUpSuccess = function () {
   $('#message').text('signed UP succesfully')
-  console.log('sign-up signUPSuccess')
+  $('#sign-up').closest('form').find('input[type=text], textarea').val('')
+  $('#sign-up').closest('form').find('input[type=password], textarea').val('')
 }
 
 const signUpFailure = function () {
   $('#message').text('signup is fail')
-  console.log('sign-up Failures')
+  $('#sign-up').closest('form').find('input[type=text], textarea').val('')
+  $('#sign-up').closest('form').find('input[type=password], textarea').val('')
+//  document.getElementById('sign-up').reset()
 }
 
 const signInSuccess = function (data) {
@@ -18,18 +22,33 @@ const signInSuccess = function (data) {
   $('.main').html('')
   $('.main').html(chatRoomTemplate)
   $('.main').html(sendTemplate)
+  $('#sign-in').closest('form').find('input[type=text], textarea').val('')
+  $('#sign-in').closest('form').find('input[type=password], textarea').val('')
 }
 
 const signInFailure = function () {
   $('#message').text('sign in Failure')
+  $('#sign-in').closest('form').find('input[type=text], textarea').val('')
+  $('#sign-in').closest('form').find('input[type=password], textarea').val('')
 }
 
 const changePasswordSuccess = function () {
-  $('#message').text('change Password Success')
+  $('#changepassmessage').text('change Password Success')
+  $('#change-password').closest('form').find('input[type=password], textarea').val('')
 }
 
 const changePasswordFailure = function () {
-  $('#message').text('change Password Failure')
+  $('#changepassmessage').text('change Password Failure')
+  $('#change-password').closest('form').find('input[type=password], textarea').val('')
+}
+const signOutSuccess = function () {
+  $('#message').text('Sign out Success')
+  $('.main').html('')
+  $('.main').html(authTemplate)
+}
+
+const signOutFailure = function () {
+  $('#message').text('Sign out Failure')
 }
 
 module.exports = {
@@ -38,7 +57,7 @@ module.exports = {
   signInSuccess,
   signInFailure,
   changePasswordSuccess,
-  changePasswordFailure
-  // signOutSuccess,
-  // signOutFailure,
+  changePasswordFailure,
+  signOutSuccess,
+  signOutFailure
 }
