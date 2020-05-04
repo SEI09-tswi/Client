@@ -21,7 +21,7 @@ $(() => {
   $('.main').on('submit', '#update', msgEvents.onUpdate)
 
   // connect to socket
-  const socket = io.connect('http://localhost:4741')
+  const socket = io.connect('https://sei-chatroom.herokuapp.com')
   $('#send-message').submit(function (e) {
     e.preventDefault() // prevents page reloading
     const userInput = $('#socket-message').val()

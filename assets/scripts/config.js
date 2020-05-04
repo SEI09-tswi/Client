@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://git.heroku.com/sei-chatroom.git',
+  production: 'https://sei-chatroom.herokuapp.com',
   development: 'http://localhost:4741'
 }
 
