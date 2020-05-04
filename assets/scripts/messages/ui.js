@@ -1,12 +1,16 @@
 const store = require('../store')
 const showMessageTemplate = require('../templates/message.handlebars')
 
+
 const sendSuccessfully = function () {
-  $('#message').text('Message sent succesfully')
+  $('#messageforsend').text('Message sent succesfully')
+  document.getElementById('send-message').reset()
+  $('#send-message').closest('form').find('input[type=text], textarea').val('')
 }
 
 const sendFailure = function (data) {
-  $('#message').text('error while sending message')
+  $('#send-message').closest('form').find('input[type=text], textarea').val('')
+  $('#messageforsend').text('error while sending message')
 }
 
 const getMsgSuccessfully = function (data) {
@@ -18,7 +22,7 @@ const getMsgSuccessfully = function (data) {
 }
 
 const getMsgFailure = function (data) {
-  $('#message').text('Error while getting message')
+  $('#messageforsend').text('Error while getting message')
 }
 
 const displayMessages = function (message) {

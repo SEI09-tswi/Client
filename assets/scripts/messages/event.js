@@ -22,7 +22,6 @@ const ondelete = function (event) {
       })
     })
     .catch(function () {
-      console.log('fail')
     })
   socket.emit('chat message', 'send')
   socket.on('chat message', function (msg) {
@@ -35,12 +34,14 @@ const onSend = function (event) {
   const data = getFormFields(event.target)
   data.chat.user = store.user.email
   api.onSendMessage(data)
-    .then(() => {
-      socket.emit('chat message', 'send')
-      socket.on('chat message', function (msg) {
-        ui.getMsgSuccessfully(msg)
+    .then(
+      () => {
+        socket.emit('chat message', 'send')
+        socket.on('chat message', function (msg) {
+          ui.getMsgSuccessfully(msg)
+        })
       })
-    })
+    .then(ui.sendSuccessfully)
     .catch(ui.sendFailure)
 }
 
