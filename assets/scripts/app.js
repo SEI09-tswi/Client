@@ -11,8 +11,8 @@ $(() => {
   // $('#sign-in').on('click', authEvents.onSignIn)
   $('.main').on('submit', '#sign-up', authEvents.onSignUp)
   $('.main').on('submit', '#sign-in', authEvents.onSignIn)
-  $('#auth').on('submit', '#change-password', authEvents.onChangePassword)
-  $('#auth').on('submit', '#sign-out', authEvents.onSignOut)
+  $('.main').on('submit', '#change-password', authEvents.onChangePassword)
+  $('.main').on('submit', '#sign-out', authEvents.onSignOut)
   $('.main').on('click', '.selectable', authScripts.displayForm)
 
   // Message listeners
@@ -24,7 +24,7 @@ $(() => {
   const socket = io.connect('https://sei-chatroom.herokuapp.com')
   $('#send-message').submit(function (e) {
     e.preventDefault() // prevents page reloading
-    const userInput = $('#send-message2').val()
+    const userInput = $('#socket-message').val()
     socket.emit('chat message', userInput)
   })
 

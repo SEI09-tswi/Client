@@ -8,7 +8,6 @@ const messagesevents = require('../messages/event')
 let socket
 
 const onSignUp = function (event) {
-    console.log('inevents for signup')
   event.preventDefault()
   const data = getFormFields(event.target)
 
@@ -18,7 +17,6 @@ const onSignUp = function (event) {
 }
 
 const onSignIn = function (event) {
-  console.log('inevents for signin')
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signIn(data)
@@ -31,7 +29,6 @@ const onSignIn = function (event) {
 }
 
 const onChangePassword = function (event) {
-  console.log('events')
   event.preventDefault()
   const data = getFormFields(event.target)
   api.changePassword(data)
@@ -45,8 +42,8 @@ const onSignOut = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signOut(data)
-  .then(ui.signOutSuccess)
- .catch(ui.signOutFailure)
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
 }
 
 module.exports = {
