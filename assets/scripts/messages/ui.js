@@ -14,11 +14,32 @@ const sendFailure = function (data) {
 }
 
 const getMsgSuccessfully = function (data) {
-  const showmessageHtml = showMessageTemplate({
-    messages: data
-  })
-  $('#messages').html(showmessageHtml)
-  $('#messages').scrollTop(50000)
+const userArray = data
+
+// console.log('in RSVP array', rsvpArray)
+// loop through the array of hangs
+userArray.forEach(data => {
+  // log hang.owner and sotre.user.id to make sure these are the right values to compare
+    if (data.user === store.user.email) {
+      // if the current user owns it then add currentUserOwns true
+      data.currentUserOwns = true
+    } else {
+    // else add currentUserOwns false
+      data.currentUserOwns = false
+    }
+})
+
+// *********************
+const showmessageHtml = showMessageTemplate({
+  messages: data
+})
+$('#messages').html(showmessageHtml)
+$('#messages').scrollTop(50000)
+  // const showmessageHtml = showMessageTemplate({
+  //   messages: data
+  // })
+  // $('#messages').html(showmessageHtml)
+  // $('#messages').scrollTop(50000)
 }
 
 const getMsgFailure = function (data) {
