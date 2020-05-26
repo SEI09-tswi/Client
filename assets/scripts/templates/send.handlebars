@@ -13,20 +13,31 @@
                        <input type= "submit" class="btn-primary" value="Send">
                      </form>
                      <div id='messageforsend'><h2></h2></div>
-
-                     <form id="change-password">
-                     <fieldset>
-                     <legend> change password </legend>
-                     <input type="password" name="passwords[old]" placeholder="old password">
-                     <input type="password" name="passwords[new]" placeholder="new password">
-                     <input type="submit" class="btn-primary"  value="change">
-                     <div id='changepassmessage'><h2></h2></div>
-
-                     </fieldset>
-                     </form>
                      <form id="sign-out">
                          <input type="submit" value="Sign Out" class="btn btn-primary">
                      </form>
+                     <li class="nav-item dropdown">
+                       <a class="nav-link dropdown-toggle btn-primary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         Change Password
+                       </a>
+                     <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
+                       <form class="px-4 py-6" id="change-password">
+                         <div class="form-group">
+                           <label for="OldPassword">Password</label>
+                           <input type="password" name="passwords[old]" class="form-control" id="OldPassword">
+                         </div>
+                         <div class="form-group">
+                           <label for="NewPassword">New Password</label>
+                           <input type="password" name="passwords[new]" class="form-control" id="NewPassword">
+                         </div>
+                         <button type="submit" class="btn btn-secondary change-password">Change</button>
+                       </form>
+                       <div class="dropdown-divider"></div>
+                       <div id='changepassmessage'><h2></h2></div>
+
+                     </div>
+                  </li>
+
              </div>
          </div>
      </div>
