@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Chat Room</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <div class="main">
+
+      <div class="login-reg-panel">
+
+      		<div class="login-info-box">
+      			<h2>Have an account?</h2>
+      			<p>Log in with an existent account</p>
+      			<label id="label-register" for="log-reg-show" >Login</label>
+      			<input type="radio" name="active-log-panel" id="log-login-show"  checked="checked" value="1" class="selectable">
+      		</div>
+
+      		<div class="register-info-box">
+      			<h2>Don't have an account?</h2>
+      			<p> Create a new account</p>
+      			<label id="label-login" for="log-login-show" >Register</label>
+      			<input type="radio" name="active-log-panel" id="log-reg-show" value="2" class="selectable">
+      		</div>
+
+      		<div class="white-panel">
+            <div class="register-show">
+              <form id="sign-up">
+      				<legend>REGISTER</legend>
+      				<input type="text" name="credentials[email]" placeholder="Email">
+      				<input type="password" name="credentials[password]" placeholder="Password">
+      				<input type="password"  name="credentials[password_confirmation]" placeholder="Confirm Password">
+      				<input type="submit" value="Register">
+            </form>
+      			</div>
+      			<div class="login-show show-log-panel">
+              <form id="sign-in">
+      				<legend>LOGIN</legend>
+      				<input type="text" name="credentials[email]" placeholder="Email">
+      				<input type="password" name="credentials[password]" placeholder="Password">
+      				<input type="submit" value="Login">
+              <form>
+
+      			</div>
+              <div id='message'><h2></h2></div>
+      			      			</div>
+
+      		</div>
+
+      	</div>
+        <div id="auth">
+
+        </div>
+      <!-- <h1>SICKKK WIDDITTT Template</h1>
+<div id='message'><h2></h2></div>
+
+      <form id="sign-up">
+    <fieldset>
+    <legend> sign up </legend>
+    <input type="text" name="credentials[email]" placeholder="email">
+    <input type="password" name="credentials[password]" placeholder="password">
+    <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+    <button type = "submit" value="sign up" >sign up</button>
+    </fieldset>
+    </form>
+
+
+
+  <form id="change-password" >
+  <fieldset>
+  <legend> change password </legend>
+  <input type="password" name="passwords[old]" placeholder="old password">
+  <input type="password" name="passwords[new]" placeholder="new password">
+  <input type = "submit" value="change">
+  </fieldset>
+  </form>
+
+
+
+!-->
+
+
+
+
+
+    </body>
+
+</html>
